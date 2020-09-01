@@ -24,3 +24,17 @@ for cont in range (0,part_lenth):
         except:
             print("Deu Erro")
             pass   
+
+
+
+"""
+          import pandas as pd
+import glob
+
+f = []
+for file in glob.glob(r"C:\Users\Analise-01\Desktop\Filiação\DadosEleitorais\**\*.csv"):
+    f.append(file)
+    filiados = [pd.read_csv(file, sep=';', encoding='ISO-8859-1') for file in f if 'filiados' in file]
+    aux = pd.concat([filiados])
+    aux.to_csv('Filiação_consolidado.csv', sep=';', index=False)
+"""
