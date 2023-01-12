@@ -24,6 +24,7 @@ class GetPoliticalParty:
         try:
             urllib.request.urlretrieve(url, nome)
             print("Ok")
+            return True
         except:
             print("Deu Erro")
             pass
@@ -34,8 +35,8 @@ class GetPoliticalParty:
         for partido in range(0, part_lenth):
             for estado in range(0, est_lenth):
                 url, nome = self._make_url(partido=partido, estado=estado)
-                self.request_data(url, nome)
-                os.system("mv " + nome + " DadosEleitorais/")
+                if self.request_data(url, nome):
+                    os.system("mv " + nome + " dados/")
 
 
 if __name__ == "__main__":
