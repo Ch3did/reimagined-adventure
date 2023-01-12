@@ -20,7 +20,7 @@ class GetPoliticalParty:
         )
         return url, nome
 
-    def request_data(self, url, nome):
+    def _request_data(self, url, nome):
         try:
             urllib.request.urlretrieve(url, nome)
             print("Ok")
@@ -35,7 +35,7 @@ class GetPoliticalParty:
         for partido in range(0, part_lenth):
             for estado in range(0, est_lenth):
                 url, nome = self._make_url(partido=partido, estado=estado)
-                if self.request_data(url, nome):
+                if self._request_data(url, nome):
                     os.system("mv " + nome + " dados/")
 
 
